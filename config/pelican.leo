@@ -95,8 +95,8 @@ g.es("admin pelican Github 執行完畢")
 Title: 2021  協同產品設計
 Date: 2020-08-13 11:00
 Category: Misc
-Tags: 2020FallCP
-Slug: 2020-Fall-Intro-to-computer-programming-1
+Tags: 2021  協同產品設計
+Slug: 2021 collaborative product design
 Author: yen
 ---
 
