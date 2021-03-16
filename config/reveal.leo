@@ -20,6 +20,7 @@
 <v t="leo.20200818170222.1"><vh>slides div</vh>
 <v t="leo.20200818170328.1"><vh>slide 1</vh></v>
 <v t="leo.20200818170535.1"><vh>slide 2</vh></v>
+<v t="leo.20200818170535.1"></v>
 <v t="leo.20200818170636.1"><vh>slide3</vh>
 <v t="leo.20200818170909.1"><vh>slide 3-1</vh></v>
 <v t="leo.20200818170953.1"><vh>slide 3-2</vh></v>
@@ -200,7 +201,7 @@ vertical: body pane on the botton</t>
     &lt;!-- Theme used for syntax highlighting of code --&gt;
     &lt;link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme"&gt;
 &lt;/head&gt;</t>
-<t tx="leo.20200818170041.1">&lt;div class="reveal"&gt;
+<t tx="leo.20200818170041.1">&lt;div class="2021-協同產品設計-40823129"&gt;
     @others
 &lt;/div&gt;</t>
 <t tx="leo.20200818170222.1">&lt;!-- Any section element inside of this container is displayed as a slide --&gt;
@@ -208,13 +209,15 @@ vertical: body pane on the botton</t>
     @others
 &lt;/div&gt;</t>
 <t tx="leo.20200818170328.1">&lt;section&gt;
-    &lt;a href="https://revealjs.com"&gt;
-        &lt;img src="https://static.slid.es/reveal/logo-v1/reveal-white-text.svg" alt="reveal.js logo" style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo"&gt;
-    &lt;/a&gt;
-    &lt;h3&gt;The HTML Presentation Framework&lt;/h3&gt;
-    &lt;p&gt;
-        &lt;small&gt;Created by &lt;a href="http://hakim.se"&gt;Hakim El Hattab&lt;/a&gt; and &lt;a href="https://github.com/hakimel/reveal.js/graphs/contributors"&gt;contributors&lt;/a&gt;&lt;/small&gt;
-    &lt;/p&gt;
+    &lt;h2&gt;專題題目&lt;/h2&gt;
+    &lt;p&gt;迴轉壽司&lt;p&gt;
+    &lt;h3&gt;設計動機&lt;/h3&gt;
+    &lt;p&gt;在各式各樣的列車當中，我們最後選擇迴轉壽司列車來作為我們此次的專題題目，而我們認為這是所有列車當中最有特色的，因為這是一個一部能在餐桌上跑的的列車，所以我們開始上網搜尋資料，迴轉壽司的外型和它的作動原理。
+&lt;/p&gt;
+    &lt;h3&gt;製程規劃&lt;h3&gt;
+    &lt;p&gt;week2零件繪製&lt;p&gt;
+    &lt;p&gt;week3:coppeliasim 模擬&lt;p&gt;
+    
 &lt;/section&gt;
 
 </t>
