@@ -649,7 +649,7 @@ console.log( '"customevent" has fired' );
 &lt;/section&gt;</t>
 <t tx="leo.20210317001634.1">&lt;section&gt;
     &lt;h2&gt;2021-協同產品設計&lt;/h2&gt;
-    &lt;p&gt;
+    &lt;p&gt;小組:stage1-ag7
     &lt;/p&gt;
 &lt;/section&gt;
 </t>
@@ -671,7 +671,7 @@ console.log( '"customevent" has fired' );
     &lt;p&gt;40823129/40823149&lt;/p&gt;
     &lt;p&gt;程式模擬&lt;/p&gt;
     &lt;p&gt;40823129/40823149&lt;/p&gt;
-    &lt;p&gt;本次專體為了不讓個人在分工交接出現溝通不良的情形,於是我們在零件繪製和程式模擬採取共同作業的方式,來減少溝通不良的問題發生
+    &lt;p&gt;本次專題為了不讓個人在分工交接出現溝通不良的情形,於是我們在零件繪製和程式模擬採取共同作業的方式,來減少溝通不良的問題發生
     &lt;/p&gt;
 &lt;/section&gt;</t>
 </tnodes>
