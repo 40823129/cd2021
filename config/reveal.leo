@@ -217,14 +217,7 @@ vertical: body pane on the botton</t>
 &lt;/section&gt;
 
 </t>
-<t tx="leo.20200818170535.1">&lt;section&gt;
-    &lt;h2&gt;Hello There&lt;/h2&gt;
-    &lt;p&gt;
-        reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
-    &lt;/p&gt;
-&lt;/section&gt;
-
-</t>
+<t tx="leo.20200818170535.1"></t>
 <t tx="leo.20200818170636.1">&lt;!-- Example of nested vertical slides --&gt;
 &lt;section&gt;
     @others
@@ -651,7 +644,8 @@ console.log( '"customevent" has fired' );
     &lt;h2&gt;專題題目&lt;/h2&gt;
     &lt;p&gt;迴轉壽司
     設計動機
-    &lt;strong&gt;在各式各樣的列車當中，我們最後選擇迴轉壽司列車來作為我們此次的專題題目，而我們認為這是所有列車當中最有特色的，因為這是一個一部能在餐桌上跑的的列車，所以我們開始上網搜尋資料，迴轉壽司的外型和它的作動原理。&lt;strong&gt;&lt;/p&gt;
+    在各式各樣的列車當中，我們最後選擇迴轉壽司列車來作為我們此次的專題題目，而我們認為這是所有列車當中最有特色的，因為這是一個一部能在餐桌上跑的的列車，所以我們開始上網搜尋資料，迴轉壽司的外型和它的作動原理。
+    &lt;/p&gt;
 &lt;/section&gt;</t>
 <t tx="leo.20210317001738.1"> &lt;section&gt;
  &lt;p&gt;製程規劃&lt;/p&gt;
