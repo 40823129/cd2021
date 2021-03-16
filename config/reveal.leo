@@ -217,7 +217,7 @@ vertical: body pane on the botton</t>
     &lt;h3&gt;製程規劃&lt;h3&gt;
     &lt;p&gt;week2零件繪製&lt;p&gt;
     &lt;p&gt;week3:coppeliasim 模擬&lt;p&gt;
-    
+    &lt;br&gt;
 &lt;/section&gt;
 
 </t>
