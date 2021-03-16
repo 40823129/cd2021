@@ -214,8 +214,8 @@ vertical: body pane on the botton</t>
     &lt;h3&gt;設計動機&lt;/h3&gt;
     &lt;p&gt;在各式各樣的列車當中，我們最後選擇迴轉壽司列車來作為我們此次的專題題目，而我們認為這是所有列車當中最有特色的，因為這是一個一部能在餐桌上跑的的列車，所以我們開始上網搜尋資料，迴轉壽司的外型和它的作動原理。
 &lt;/p&gt;
-    &lt;h3&gt;製程規劃&lt;h3&gt;
-    &lt;p&gt;week2零件繪製&lt;p&gt;
+    &lt;h3&gt;製程規劃&lt;/h3&gt;
+    &lt;p&gt;week2:零件繪製&lt;p&gt;
     &lt;p&gt;week3:coppeliasim 模擬&lt;p&gt;
     &lt;br&gt;
 &lt;/section&gt;
