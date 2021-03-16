@@ -21,7 +21,7 @@
 <v t="leo.20200818170328.1"><vh>slide 1</vh>
 <v t="leo.20210317001634.1"><vh>slide1-1</vh></v>
 <v t="leo.20210317001738.1"><vh>slide1-2</vh></v>
-<v t="leo.20210317012714.1"><vh>slide-3</vh></v>
+<v t="leo.20210317012714.1"><vh>slide1-3</vh></v>
 </v>
 <v t="leo.20200818170535.1"><vh>slide 2</vh></v>
 <v t="leo.20200818170636.1"><vh>slide3</vh>
@@ -204,7 +204,7 @@ vertical: body pane on the botton</t>
     &lt;!-- Theme used for syntax highlighting of code --&gt;
     &lt;link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme"&gt;
 &lt;/head&gt;</t>
-<t tx="leo.20200818170041.1">&lt;div class="2021  協同產品設計  40823129"&gt;
+<t tx="leo.20200818170041.1">&lt;div class="reveal"&gt;
     @others
 &lt;/div&gt;</t>
 <t tx="leo.20200818170222.1">&lt;!-- Any section element inside of this container is displayed as a slide --&gt;
@@ -217,7 +217,9 @@ vertical: body pane on the botton</t>
 &lt;/section&gt;
 
 </t>
-<t tx="leo.20200818170535.1"></t>
+<t tx="leo.20200818170535.1">&lt;section&gt;
+    
+&lt;/section&gt;</t>
 <t tx="leo.20200818170636.1">&lt;!-- Example of nested vertical slides --&gt;
 &lt;section&gt;
     @others
@@ -643,7 +645,7 @@ console.log( '"customevent" has fired' );
 <t tx="leo.20210317001634.1">&lt;section&gt;
     &lt;h2&gt;w1&lt;/h2&gt;
     &lt;p&gt;
-    &lt;/p&gt;  
+    &lt;/p&gt;
 &lt;/section&gt;
 </t>
 <t tx="leo.20210317001738.1">&lt;section&gt;
