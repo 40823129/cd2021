@@ -211,9 +211,10 @@ vertical: body pane on the botton</t>
 &lt;div class="slides"&gt;
     @others
 &lt;/div&gt;</t>
-<t tx="leo.20200818170328.1">&lt;!-- Example of nested vertical slides --&gt;
-&lt;section&gt;
-  @others
+<t tx="leo.20200818170328.1">&lt;section&gt;
+    &lt;h2&gt;w1&lt;/h2&gt;
+    &lt;p&gt;
+    &lt;/p&gt;  
 &lt;/section&gt;
 
 </t>
