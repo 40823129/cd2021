@@ -23,7 +23,9 @@
 <v t="leo.20210317001738.1"><vh>slide1-2</vh></v>
 <v t="leo.20210317012714.1"><vh>slide1-3</vh></v>
 </v>
-<v t="leo.20200818170535.1"><vh>slide 2</vh></v>
+<v t="leo.20200818170535.1"><vh>slide 2</vh>
+<v t="leo.20210317024033.1"><vh>slide 2-1</vh></v>
+</v>
 <v t="leo.20200818170636.1"><vh>slide3</vh>
 <v t="leo.20200818170909.1"><vh>slide 3-1</vh></v>
 <v t="leo.20200818170953.1"><vh>slide 3-2</vh></v>
@@ -217,9 +219,12 @@ vertical: body pane on the botton</t>
 &lt;/section&gt;
 
 </t>
-<t tx="leo.20200818170535.1">&lt;section&gt;
-    
-&lt;/section&gt;</t>
+<t tx="leo.20200818170535.1">&lt;!-- Example of nested vertical slides --&gt;
+&lt;section&gt;
+    @others
+&lt;/section&gt;
+
+</t>
 <t tx="leo.20200818170636.1">&lt;!-- Example of nested vertical slides --&gt;
 &lt;section&gt;
     @others
@@ -659,6 +664,15 @@ console.log( '"customevent" has fired' );
  &lt;h2&gt;製程規劃&lt;/h2&gt;
     &lt;p&gt;week2:零件繪製&lt;/p&gt;
     &lt;p&gt;week3:coppeliasim 模擬&lt;/p&gt;
+&lt;/section&gt;</t>
+<t tx="leo.20210317024033.1">&lt;section&gt;
+    &lt;h2&gt;任務分工&lt;/h2&gt;
+    &lt;p&gt;零件繪製(solidworks)&lt;/p&gt;
+    &lt;p&gt;40823129/40823149&lt;/p&gt;
+    &lt;p&gt;程式模擬&lt;/p&gt;
+    &lt;p&gt;40823129/40823149&lt;/p&gt;
+    &lt;p&gt;本次專體為了不讓個人在分工交接出現溝通不良的情形,於是我們在零件繪製和程式模擬採取共同作業的方式,來減少溝通不良的問題發生
+    &lt;/p&gt;
 &lt;/section&gt;</t>
 </tnodes>
 </leo_file>
