@@ -213,7 +213,7 @@ vertical: body pane on the botton</t>
 &lt;/div&gt;</t>
 <t tx="leo.20200818170328.1">&lt;!-- Example of nested vertical slides --&gt;
 &lt;section&gt;
-@others
+  @others
 &lt;/section&gt;
 
 </t>
@@ -648,7 +648,7 @@ console.log( '"customevent" has fired' );
     &lt;/p&gt;
 &lt;/section&gt;</t>
 <t tx="leo.20210317001738.1"> &lt;section&gt;
- &lt;p&gt;製程規劃&lt;/p&gt;
+ &lt;h2&gt;製程規劃&lt;/h2&gt;
     &lt;p&gt;week2:零件繪製&lt;/p&gt;
     &lt;p&gt;week3:coppeliasim 模擬&lt;/p&gt;
 &lt;/section&gt;</t>
