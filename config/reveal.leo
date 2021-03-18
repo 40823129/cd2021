@@ -19,9 +19,10 @@
 <v t="leo.20200818170041.1"><vh>reveal div</vh>
 <v t="leo.20200818170222.1"><vh>slides div</vh>
 <v t="leo.20200818170328.1"><vh>slide 1</vh>
-<v t="leo.20210317001634.1"><vh>slide1-1</vh></v>
-<v t="leo.20210317001738.1"><vh>slide1-2</vh></v>
-<v t="leo.20210317012714.1"><vh>slide1-3</vh></v>
+<v t="leo.20210318133451.1"><vh>slide1-1</vh></v>
+<v t="leo.20210317001634.1"><vh>slide1-2</vh></v>
+<v t="leo.20210317001738.1"><vh>slide1-3</vh></v>
+<v t="leo.20210317012714.1"><vh>slide1-4</vh></v>
 </v>
 <v t="leo.20200818170535.1"><vh>slide 2</vh>
 <v t="leo.20210317024033.1"><vh>slide 2-1</vh></v>
@@ -263,5 +264,10 @@ vertical: body pane on the botton</t>
      &lt;p&gt;但是在最終模擬時還是無法作動&lt;/p&gt;
 &lt;/section&gt;
 </t>
+<t tx="leo.20210318133451.1">&lt;section&gt;
+             &lt;h2&gt;產品設計報告&lt;/h2&gt;
+                 &lt;p&gt;&lt;iframe height="550" src="https://drive.google.com/file/d/1GYAHRodduOaajIFqXrmNacaxdKTTPOk6/preview" width="1000"&gt;&lt;/iframe&gt;&lt;/p&gt;
+
+         &lt;/section&gt;</t>
 </tnodes>
 </leo_file>
