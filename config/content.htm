@@ -69,6 +69,19 @@
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/BD9NBRLEIe0" title="YouTube video player" width="560"></iframe></p>
 <p><img alt="" height="470" src="/images/螺釘2.png" width="563"/></p>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/67mRmPsLjh4" title="YouTube video player" width="560"></iframe></p>
+<h3>Heroku</h3>
+<p>1.利用學校的gm帳號建立  <span>heroku  帳號</span></p>
+<p><span>2.建立 Heroku app</span></p>
+<p><span>3.從  <a href="http://a.kmol.info:88/heroku.7z">http://a.kmol.info:88/heroku.7z</a> 下載 Heroku cli 程式檔案,解至隨身碟 Y:</span></p>
+<p><span>4.修改  start.bat 中的內容 ,修改完後確認並重新啟動</span></p>
+<p><span><img alt="" height="324" src="/images/heroku.png" width="421"/></span></p>
+<p><span>5.測試能否在命令列中執行 heroku.exe, 輸入 heroku version,如果有回應所使用的版本代表上述路徑設定成功</span></p>
+<p><span>6.proxy的設定,在start.bat當中加入</span></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">REM for heroku login
+set HTTP_PROXY=http://[2001:288:6004:17::53]:3128
+set HTTPS_PROXY=http://[2001:288:6004:17::53]:3128</pre>
+<p>7.<span>利用 Heroku 同步 Github Pages 上的網站內容</span></p>
+<p>8.<span>使用 git push heroku 就可以將改版內容推送到對應的 Heroku app 倉儲</span></p>
 <h1>stage3</h1>
 <h2>W10</h2>
 <h3>task1</h3>

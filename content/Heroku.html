@@ -133,93 +133,20 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">W10 << <a href='W10.html'>Previous</a> <a href='task2.html'>Next</a> >> task2<br /><h1>task1</h1>
-<p>程式碼</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># open file, default is read mode, since txt content no chinese char
-# no encoding = "UTF-08" is needed
-with open("stage3_2a.txt") as hj:
-    # readlines will read into the whole line and put into list format 
-    # has \n at the end of each line 
-    data = hj.readlines()
-    A= [a.replace('4823122','40823122') for a in data]
-    #replace('被取代的','修改成你要的')
-    #把這串replace ('4823122','40823122')命名為a,然後for-loop到data中修改
-    B = [c.replace('\t\t\t\t','') for c in A]
-    #因為有一組只有6人,所以用 replace 把空位刪除
-    #(\t\t代表一個)
-    D = [b.replace('_','-') for b in B]
-    #把_替換成-
-    #print(D)
-#print(len(D))
-#利用len()函式來得出list中有多少元素
-for i in range(len(data)):
-    #以range為len(data)=6進行迴圈,變數為i
-    group = D[i].rstrip("\n").split("\t")
-    #取data list中的第i項進行處理,去除元素中的\n,並利用\n為依據,分割元素成為新串列.
-    print('&lt;p&gt;'+group[0]+'|&lt;a href="https://'+group[1]+'.github.io/'+group[0]+'"&gt;網站&lt;/a&gt;|&lt;a href="https://github.com/'+group[2]+'/'+group[0]+'"&gt;倉儲&lt;/a&gt;&lt;/p&gt;')
-# the following will use group data to generate needed html
- 
-    for j in range(2,18,2):
-        #以2為起始每次加2加到16,因為18不算,也就是執行迴圈8次.
-        try:
-            print('&lt;p&gt;'+group[j]+'|Website:'+'&lt;a href="https://'+group[j]+'.github.io/cd2021'+'"&gt;'+group[j]+'&lt;/a&gt;'+'|Repository:'+'&lt;a href="https://github.com/'+group[j]+'/cd2021'+'"&gt;'+group[j]+'&lt;/a&gt;&lt;/p&gt;')
-        except:
-            continue#跑到第三組時,會出現錯誤所以使用continue強制執行
-            </pre>
-<p>成果</p>
-<p>stage3-ag1|<a href="https://40823131.github.io/stage3-ag1">網站</a>|<a href="https://github.com/40823131/stage3-ag1">倉儲</a></p>
-<p>40823131|Website:<a href="https://40823131.github.io/cd2021">40823131</a>|Repository:<a href="https://github.com/40823131/cd2021">40823131</a></p>
-<p>a40823112|Website:<a href="https://a40823112.github.io/cd2021">a40823112</a>|Repository:<a href="https://github.com/a40823112/cd2021">a40823112</a></p>
-<p>40823123|Website:<a href="https://40823123.github.io/cd2021">40823123</a>|Repository:<a href="https://github.com/40823123/cd2021">40823123</a></p>
-<p>40823145|Website:<a href="https://40823145.github.io/cd2021">40823145</a>|Repository:<a href="https://github.com/40823145/cd2021">40823145</a></p>
-<p>40823136|Website:<a href="https://40823136.github.io/cd2021">40823136</a>|Repository:<a href="https://github.com/40823136/cd2021">40823136</a></p>
-<p>40823109|Website:<a href="https://40823109.github.io/cd2021">40823109</a>|Repository:<a href="https://github.com/40823109/cd2021">40823109</a></p>
-<p>40823116|Website:<a href="https://40823116.github.io/cd2021">40823116</a>|Repository:<a href="https://github.com/40823116/cd2021">40823116</a></p>
-<p>40823108|Website:<a href="https://40823108.github.io/cd2021">40823108</a>|Repository:<a href="https://github.com/40823108/cd2021">40823108</a></p>
-<p>stage3-ag2|<a href="https://40823151.github.io/stage3-ag2">網站</a>|<a href="https://github.com/40823151/stage3-ag2">倉儲</a></p>
-<p>40823151|Website:<a href="https://40823151.github.io/cd2021">40823151</a>|Repository:<a href="https://github.com/40823151/cd2021">40823151</a></p>
-<p>40623121|Website:<a href="https://40623121.github.io/cd2021">40623121</a>|Repository:<a href="https://github.com/40623121/cd2021">40623121</a></p>
-<p>40871106|Website:<a href="https://40871106.github.io/cd2021">40871106</a>|Repository:<a href="https://github.com/40871106/cd2021">40871106</a></p>
-<p>40823102|Website:<a href="https://40823102.github.io/cd2021">40823102</a>|Repository:<a href="https://github.com/40823102/cd2021">40823102</a></p>
-<p>40823104|Website:<a href="https://40823104.github.io/cd2021">40823104</a>|Repository:<a href="https://github.com/40823104/cd2021">40823104</a></p>
-<p>40823106|Website:<a href="https://40823106.github.io/cd2021">40823106</a>|Repository:<a href="https://github.com/40823106/cd2021">40823106</a></p>
-<p>40823101|Website:<a href="https://40823101.github.io/cd2021">40823101</a>|Repository:<a href="https://github.com/40823101/cd2021">40823101</a></p>
-<p>40823132|Website:<a href="https://40823132.github.io/cd2021">40823132</a>|Repository:<a href="https://github.com/40823132/cd2021">40823132</a></p>
-<p>stage3-ag3|<a href="https://40823119.github.io/stage3-ag3">網站</a>|<a href="https://github.com/40823119/stage3-ag3">倉儲</a></p>
-<p>40823119|Website:<a href="https://40823119.github.io/cd2021">40823119</a>|Repository:<a href="https://github.com/40823119/cd2021">40823119</a></p>
-<p>40823150|Website:<a href="https://40823150.github.io/cd2021">40823150</a>|Repository:<a href="https://github.com/40823150/cd2021">40823150</a></p>
-<p>40823103|Website:<a href="https://40823103.github.io/cd2021">40823103</a>|Repository:<a href="https://github.com/40823103/cd2021">40823103</a></p>
-<p>40823107|Website:<a href="https://40823107.github.io/cd2021">40823107</a>|Repository:<a href="https://github.com/40823107/cd2021">40823107</a></p>
-<p>40523252|Website:<a href="https://40523252.github.io/cd2021">40523252</a>|Repository:<a href="https://github.com/40523252/cd2021">40523252</a></p>
-<p>40823154|Website:<a href="https://40823154.github.io/cd2021">40823154</a>|Repository:<a href="https://github.com/40823154/cd2021">40823154</a></p>
-<p>stage3-ag4|<a href="https://40823142.github.io/stage3-ag4">網站</a>|<a href="https://github.com/40823142/stage3-ag4">倉儲</a></p>
-<p>40823142|Website:<a href="https://40823142.github.io/cd2021">40823142</a>|Repository:<a href="https://github.com/40823142/cd2021">40823142</a></p>
-<p>40823144|Website:<a href="https://40823144.github.io/cd2021">40823144</a>|Repository:<a href="https://github.com/40823144/cd2021">40823144</a></p>
-<p>40823127|Website:<a href="https://40823127.github.io/cd2021">40823127</a>|Repository:<a href="https://github.com/40823127/cd2021">40823127</a></p>
-<p>40823148|Website:<a href="https://40823148.github.io/cd2021">40823148</a>|Repository:<a href="https://github.com/40823148/cd2021">40823148</a></p>
-<p>40823121|Website:<a href="https://40823121.github.io/cd2021">40823121</a>|Repository:<a href="https://github.com/40823121/cd2021">40823121</a></p>
-<p>40823135|Website:<a href="https://40823135.github.io/cd2021">40823135</a>|Repository:<a href="https://github.com/40823135/cd2021">40823135</a></p>
-<p>40823114|Website:<a href="https://40823114.github.io/cd2021">40823114</a>|Repository:<a href="https://github.com/40823114/cd2021">40823114</a></p>
-<p>40823146|Website:<a href="https://40823146.github.io/cd2021">40823146</a>|Repository:<a href="https://github.com/40823146/cd2021">40823146</a></p>
-<p>stage3-ag5|<a href="https://40823111.github.io/stage3-ag5">網站</a>|<a href="https://github.com/40823111/stage3-ag5">倉儲</a></p>
-<p>40823111|Website:<a href="https://40823111.github.io/cd2021">40823111</a>|Repository:<a href="https://github.com/40823111/cd2021">40823111</a></p>
-<p>40823115|Website:<a href="https://40823115.github.io/cd2021">40823115</a>|Repository:<a href="https://github.com/40823115/cd2021">40823115</a></p>
-<p>40823128|Website:<a href="https://40823128.github.io/cd2021">40823128</a>|Repository:<a href="https://github.com/40823128/cd2021">40823128</a></p>
-<p>40823120|Website:<a href="https://40823120.github.io/cd2021">40823120</a>|Repository:<a href="https://github.com/40823120/cd2021">40823120</a></p>
-<p>40823140|Website:<a href="https://40823140.github.io/cd2021">40823140</a>|Repository:<a href="https://github.com/40823140/cd2021">40823140</a></p>
-<p>40823124|Website:<a href="https://40823124.github.io/cd2021">40823124</a>|Repository:<a href="https://github.com/40823124/cd2021">40823124</a></p>
-<p>40823139|Website:<a href="https://40823139.github.io/cd2021">40823139</a>|Repository:<a href="https://github.com/40823139/cd2021">40823139</a></p>
-<p>40823126|Website:<a href="https://40823126.github.io/cd2021">40823126</a>|Repository:<a href="https://github.com/40823126/cd2021">40823126</a></p>
-<p>stage3-ag6|<a href="https://40823152.github.io/stage3-ag6">網站</a>|<a href="https://github.com/40823152/stage3-ag6">倉儲</a></p>
-<p>40823152|Website:<a href="https://40823152.github.io/cd2021">40823152</a>|Repository:<a href="https://github.com/40823152/cd2021">40823152</a></p>
-<p>40823110|Website:<a href="https://40823110.github.io/cd2021">40823110</a>|Repository:<a href="https://github.com/40823110/cd2021">40823110</a></p>
-<p>40823122|Website:<a href="https://40823122.github.io/cd2021">40823122</a>|Repository:<a href="https://github.com/40823122/cd2021">40823122</a></p>
-<p>40823125|Website:<a href="https://40823125.github.io/cd2021">40823125</a>|Repository:<a href="https://github.com/40823125/cd2021">40823125</a></p>
-<p>40823117|Website:<a href="https://40823117.github.io/cd2021">40823117</a>|Repository:<a href="https://github.com/40823117/cd2021">40823117</a></p>
-<p>40823129|Website:<a href="https://40823129.github.io/cd2021">40823129</a>|Repository:<a href="https://github.com/40823129/cd2021">40823129</a></p>
-<p>40823149|Website:<a href="https://40823149.github.io/cd2021">40823149</a>|Repository:<a href="https://github.com/40823149/cd2021">40823149</a></p>
-<p>40823153|Website:<a href="https://40823153.github.io/cd2021">40823153</a>|Repository:<a href="https://github.com/40823153/cd2021">40823153</a></p>
-<br />W10 << <a href='W10.html'>Previous</a> <a href='task2.html'>Next</a> >> task2</div>
+    <div id="tipue_search_content">W7 << <a href='W7.html'>Previous</a> <a href='stage3.html'>Next</a> >> stage3<br /><h1>Heroku</h1>
+<p>1.利用學校的gm帳號建立  <span>heroku  帳號</span></p>
+<p><span>2.建立 Heroku app</span></p>
+<p><span>3.從  <a href="http://a.kmol.info:88/heroku.7z">http://a.kmol.info:88/heroku.7z</a> 下載 Heroku cli 程式檔案,解至隨身碟 Y:</span></p>
+<p><span>4.修改  start.bat 中的內容 ,修改完後確認並重新啟動</span></p>
+<p><span><img alt="" height="324" src="./../images/heroku.png" width="421"/></span></p>
+<p><span>5.測試能否在命令列中執行 heroku.exe, 輸入 heroku version,如果有回應所使用的版本代表上述路徑設定成功</span></p>
+<p><span>6.proxy的設定,在start.bat當中加入</span></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">REM for heroku login
+set HTTP_PROXY=http://[2001:288:6004:17::53]:3128
+set HTTPS_PROXY=http://[2001:288:6004:17::53]:3128</pre>
+<p>7.<span>利用 Heroku 同步 Github Pages 上的網站內容</span></p>
+<p>8.<span>使用 git push heroku 就可以將改版內容推送到對應的 Heroku app 倉儲</span></p>
+<br />W7 << <a href='W7.html'>Previous</a> <a href='stage3.html'>Next</a> >> stage3</div>
         
     <!-- footer -->
       <div class="container">
