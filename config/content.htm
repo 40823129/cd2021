@@ -13,7 +13,8 @@
 <p>個人倉儲:</p>
 <p><a href="https://github.com/40823129/cd2021" title="cd2021"> <img alt="" height="138" src="/images/1.png" width="366"/></a></p>
 <p>YT頻道:</p>
-<p><a href="https://www.youtube.com/channel/UC3JWZoHd_cjY4DreQ4phLpw" title="40823129"> <img alt="" height="145" src="/images/2.png" width="347"/></a></p><h1>supplement</h1>
+<p><a href="https://www.youtube.com/channel/UC3JWZoHd_cjY4DreQ4phLpw" title="40823129"> <img alt="" height="145" src="/images/2.png" width="347"/></a></p>
+<h1>supplement</h1>
 <h2>DroidCam  teaching</h2>
 <p>DroidCam turns Android phones into PC video cameras</p>
 <p>step1:在手機和電腦上分別下載應用程式  <a href="https://play.google.com/store/apps/details?id=com.dev47apps.droidcam">連結</a></p>
@@ -30,7 +31,8 @@ https://192.這裡會有一行數字</pre>
 <p><span><img alt="" height="626" src="/images/0613-1.png" width="500"/></span></p>
 <p><span>如果想把手機當麥克風收音，就要把 Audio 勾起來</span></p>
 <p><span>這樣就設定完成了</span></p>
-<p></p><h1>stage1</h1>
+<p></p>
+<h1>stage1</h1>
 <p>組員:<span>40823129  姓名:汪昱呈 倉儲:</span><a href="https://github.com/40823129/cd2021">40823129倉儲</a></p>
 <p><span>組員:</span><span>40823149  姓名:趙偉辰 倉儲:<a href="https://github.com/40823149/cd2021">40823149倉儲</a></span></p>
 <p>小組倉儲:<a href="https://github.com/40823149/stage1-ag7">小組倉儲</a></p>
@@ -402,3 +404,73 @@ for i in range(len(data)):
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/n38DD_WI47s" title="YouTube video player" width="560"></iframe></p>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/Ljs0ZaSFJS8" title="YouTube video player" width="560"></iframe></p>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/UvT8baDxMm0" title="YouTube video player" width="560"></iframe></p>
+<h3>CoppeliaSim 4.1.0 MTB robot</h3>
+<p>coppeliasim匯入stl檔,及基本設定操作</p>
+<p>影片:</p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/mWjwMn54CeQ" title="YouTube video player" width="560"></iframe></p>
+<p></p>
+<p>MTB_robot作動成果,以鍵盤的 (w,a,s,d) 做上下左右的移動</p>
+<p>影片:</p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/IR_onX4VC6M" title="YouTube video player" width="560"></iframe></p>
+<p></p>
+<p>Tips:要注意的是程式內部的名稱要跟軸的名字一樣,否則無法作動</p>
+<p></p>
+<p><img caption="false" height="201" src="/images/MTB.png" width="500"/></p>
+<p></p>
+<p>程式碼:</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">function sysCall_init()
+    -- do some initialization here
+     axis1=sim.getObjectHandle('MTB_axis1')
+     axis1=sim.getObjectHandle('MTB_axis1')
+     axis3=sim.getObjectHandle('MTB_axis3')
+     axis4=sim.getObjectHandle('MTB_axis4')     
+     rotation1 = 0
+     distance3 = 0
+      
+     deg = math.pi/180
+     --sim.sJointTargetVelocity(joint,5.5)
+      
+      
+     
+      
+ 
+end
+ 
+function sysCall_actuation()
+ calibration = 0.0042
+ message,auxiliaryData=sim.getSimulatorMessage()
+ if (message==sim.message_keypress) then
+      print(auxiliaryData[1])--key
+      if (auxiliaryData[1]==string.byte(' ')) then
+      end
+      if (auxiliaryData[1]==97) then--a
+      rotation1 = rotation1 + 5*deg
+      sim.setJointPosition(axis1, rotation1)
+      end
+      if (auxiliaryData[1]==100) then --d
+      rotation1 = rotation1 - 5*deg
+      sim.setJointPosition(axis1, rotation1)
+      end
+      if (auxiliaryData[1]==119) then --s
+      distance3 = distance3 + 0.01 + calibration
+      sim.setJointPosition(axis3, distance3)
+      end
+      if (auxiliaryData[1]==115) then --w
+      distance3 = distance3 - 0.01 - calibration
+      sim.setJointPosition(axis3, distance3)
+      end
+      
+ end   
+ 
+ 
+end
+function sysCall_sensing()
+    -- put your sensing code here
+end
+ 
+function sysCall_cleanup()
+    -- do some clean-up here
+end
+ 
+-- See the user manual or the available code snippets for additional callback functions and details</pre>
+<p></p>

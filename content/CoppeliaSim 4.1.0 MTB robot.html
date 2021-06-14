@@ -133,18 +133,76 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content"> <a href='個人簡介.html'>Next</a> >> 個人簡介<br /><h1>About</h1>
-<p>此內容管理系統以 <a href="https://github.com/mdecourse/cmsimde">https://github.com/mdecourse/cmsimde</a> 作為 submodule 運作, 可以選定對應的版本運作, cmsimde 可以持續改版, 不會影響之前設為 submodule, 使用舊版 cmsimde 模組的內容管理相關運作.</p>
-<h4>利用 cmsimde 建立靜態網誌方法:</h4>
-<p>1. 在 github 建立倉儲, git clone 到近端</p>
-<p>2. 參考 <a href="https://github.com/mdecourse/newcms">https://github.com/mdecourse/newcms</a>, 加入除了 cmsimde 目錄外的所有內容</p>
-<p>以 git submodule add <a href="https://github.com/mdecourse/cmsimde">https://github.com/mdecourse/cmsimde</a> cmsimde</p>
-<p>建立 cmsimde 目錄, 並從 github 取下子模組內容.</p>
-<p>3.在近端維護時, 更換目錄到倉儲中的 cmsimde, 以 python wsgi.py 啟動近端網際伺服器.</p>
-<p>動態內容編輯完成後, 以 generate_pages 轉為靜態內容, 以 git add commit 及 push 將內容推到遠端.</p>
-<p>4. 之後若要以 git clone 取下包含 submodule 的所有內容, 執行:</p>
-<p>git clone --recurse-submodules <a href="https://github.com/mdecourse/newcms.git">https://github.com/mdecourse/newcms.git</a></p>
-<br /> <a href='個人簡介.html'>Next</a> >> 個人簡介</div>
+    <div id="tipue_search_content">Onshape 零組件繪製 << <a href='Onshape 零組件繪製.html'>Previous</a> <br /><h1>CoppeliaSim 4.1.0 MTB robot</h1>
+<p>coppeliasim匯入stl檔,及基本設定操作</p>
+<p>影片:</p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/mWjwMn54CeQ" title="YouTube video player" width="560"></iframe></p>
+<p></p>
+<p>MTB_robot作動成果,以鍵盤的 (w,a,s,d) 做上下左右的移動</p>
+<p>影片:</p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/IR_onX4VC6M" title="YouTube video player" width="560"></iframe></p>
+<p></p>
+<p>Tips:要注意的是程式內部的名稱要跟軸的名字一樣,否則無法作動</p>
+<p></p>
+<p><img caption="false" height="201" src="./../images/MTB.png" width="500"/></p>
+<p></p>
+<p>程式碼:</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">function sysCall_init()
+    -- do some initialization here
+     axis1=sim.getObjectHandle('MTB_axis1')
+     axis1=sim.getObjectHandle('MTB_axis1')
+     axis3=sim.getObjectHandle('MTB_axis3')
+     axis4=sim.getObjectHandle('MTB_axis4')     
+     rotation1 = 0
+     distance3 = 0
+      
+     deg = math.pi/180
+     --sim.sJointTargetVelocity(joint,5.5)
+      
+      
+     
+      
+ 
+end
+ 
+function sysCall_actuation()
+ calibration = 0.0042
+ message,auxiliaryData=sim.getSimulatorMessage()
+ if (message==sim.message_keypress) then
+      print(auxiliaryData[1])--key
+      if (auxiliaryData[1]==string.byte(' ')) then
+      end
+      if (auxiliaryData[1]==97) then--a
+      rotation1 = rotation1 + 5*deg
+      sim.setJointPosition(axis1, rotation1)
+      end
+      if (auxiliaryData[1]==100) then --d
+      rotation1 = rotation1 - 5*deg
+      sim.setJointPosition(axis1, rotation1)
+      end
+      if (auxiliaryData[1]==119) then --s
+      distance3 = distance3 + 0.01 + calibration
+      sim.setJointPosition(axis3, distance3)
+      end
+      if (auxiliaryData[1]==115) then --w
+      distance3 = distance3 - 0.01 - calibration
+      sim.setJointPosition(axis3, distance3)
+      end
+      
+ end   
+ 
+ 
+end
+function sysCall_sensing()
+    -- put your sensing code here
+end
+ 
+function sysCall_cleanup()
+    -- do some clean-up here
+end
+ 
+-- See the user manual or the available code snippets for additional callback functions and details</pre>
+<p></p><br />Onshape 零組件繪製 << <a href='Onshape 零組件繪製.html'>Previous</a> </div>
         
     <!-- footer -->
       <div class="container">
