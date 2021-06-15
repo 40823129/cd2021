@@ -133,14 +133,66 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">task1 << <a href='task1.html'>Previous</a> <a href='W11.html'>Next</a> >> W11<br /><h1>task2</h1>
-<p>coppeliasim版本需用4.2.0版,並透過以下程式可遠端操作小車運作</p>
-<p><img alt="" height="278" src="./../images/螢幕擷取畫面 2021-05-06 011424.png" width="502"/></p>
-<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/0tmRh7PEc8g" title="YouTube video player" width="560"></iframe></p>
-<p></p>
-<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/YtgImknOy7g" title="YouTube video player" width="560"></iframe></p>
-<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/neWlraX76xU" title="YouTube video player" width="560"></iframe></p>
-<br />task1 << <a href='task1.html'>Previous</a> <a href='W11.html'>Next</a> >> W11</div>
+    <div id="tipue_search_content">MTB_robot add suction pad << <a href='MTB_robot add suction pad.html'>Previous</a> <br /><h1>逆向運動學函式</h1>
+<p>影片:</p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/3F1TOlC-U3E" title="YouTube video player" width="560"></iframe></p>
+<p>主程式:</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">function sysCall_init() 
+    axis1=sim.getObjectHandle('MTB_axis1')
+    axis2=sim.getObjectHandle('MTB_axis2')
+    axis3=sim.getObjectHandle('MTB_axis3')
+    axis4=sim.getObjectHandle('MTB_axis4')
+    mtb3=sim.getObjectHandle('link3')
+    suctionPad=sim.getObjectHandle('suctionPad')
+    BaseFrame=sim.getObjectHandle("BaseFrame")
+    block =sim.getObjectHandle("Cuboid")
+    rotation1 = 0
+    rotation2 = 0
+    distance3 = 0
+    modelBase=sim.getObjectHandle(sim.handle_self)
+    robotBase=modelBase
+    robotName='suctionPad'
+    deg = math.pi/180
+     
+end
+function sysCall_actuation() 
+    calibration = 0.0042
+    message, auxiliaryData=sim.getSimulatorMessage()
+        while message ~= -1 do
+            key=auxiliaryData[1]
+            sim.addStatusbarMessage('????? key:'..key)
+            if (message==sim.message_keypress) then
+            if (auxiliaryData[1]==112) then --p activate the suction pad
+                sim.setScriptSimulationParameter(sim.getScriptAssociatedWithObject(suctionPad),"active",'true')
+                end -- if p
+                if (auxiliaryData[1]==113) then --q deactivate the suction pad
+                sim.setScriptSimulationParameter(sim.getScriptAssociatedWithObject(suctionPad),'active','false')
+                end -- if q
+                if (auxiliaryData[1]==49) then  
+                     rotation1 = 67.8
+                     rotation2 = 44.76
+                     sim.setJointPosition(axis1, rotation1)
+                     sim.setJointPosition(axis2, rotation2)
+                end -- if 1
+                if (auxiliaryData[1]==50) then  
+                     rotation1 = -279.64
+                     rotation2 = -49.9
+                     sim.setJointPosition(axis1, rotation2)
+                     sim.setJointPosition(axis2, rotation1)
+                end -- if 2
+                if (auxiliaryData[1]==100) then  
+                     distance3 = distance3 + 0.03 + calibration
+                     sim.setJointPosition(axis4, distance3)
+                end -- if d
+                if (auxiliaryData[1]==117) then 
+                     distance3 = distance3 - 0.03 - calibration
+                     sim.setJointPosition(axis4, distance3)
+                end -- if u
+           end  -- if
+    message, auxiliaryData=sim.getSimulatorMessage()
+        end -- while
+end -- function</pre>
+<p><img alt="" height="375" src="./../images/41123.jpg" width="500"/></p><br />MTB_robot add suction pad << <a href='MTB_robot add suction pad.html'>Previous</a> </div>
         
     <!-- footer -->
       <div class="container">

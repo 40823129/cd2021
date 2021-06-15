@@ -390,8 +390,8 @@ for i in range(len(data)):
 <p></p>
 <h2>W16</h2>
 <h3>Onshape 零組件繪製</h3>
-<p>onshape零件連結:<a href="https://cad.onshape.com/documents/ad3e8a40547adfe153c1c337/w/84640b2275e74e58d912f25d/e/486b29fb5a986d53574880be">底座</a>  <a href="https://cad.onshape.com/documents/8d0c646e570242872e7288dc/w/722eacffdebd14d4fbb6626d/e/7f7e699c8ef965e2ea38767b">arm 1</a> <a href="https://cad.onshape.com/documents/774035bc83123d29d9455ea5/w/0bbf68316202d2228d5cc882/e/6127352194de2c57d2a165f6">arm 2</a>  <a href="https://cad.onshape.com/documents/a7f9ea251765268e4fb3c29a/w/c990d9d714e59475152a0e2b/e/44f87fd6251968c605593b46">軸</a> </p>
-<p>onshape組合件連結: <a href="https://cad.onshape.com/documents/08061b31ee75722018b7f51d/w/ade291d1fc83d5e5e8e3b96d/e/5c4cc607ecb352f6a2465a2f">組合圖</a></p>
+<p>onshape零件連結:<a href="https://cad.onshape.com/documents/ad3e8a40547adfe153c1c337/w/84640b2275e74e58d912f25d/e/486b29fb5a986d53574880be">底座</a>  <a href="https://cad.onshape.com/documents/8d0c646e570242872e7288dc/w/722eacffdebd14d4fbb6626d/e/7f7e699c8ef965e2ea38767b">arm 1</a> <a href="https://cad.onshape.com/documents/774035bc83123d29d9455ea5/w/0bbf68316202d2228d5cc882/e/6127352194de2c57d2a165f6">arm 2</a>  <a href="https://cad.onshape.com/documents/e612fa65948031f505a55788/w/8652b995a0d22703270a36b8/e/3d07ed0674431c34417dd202">軸</a> </p>
+<p>onshape組合件連結: <a href="https://cad.onshape.com/documents/08061b31ee75722018b7f51d/w/ade291d1fc83d5e5e8e3b96d/e/e368832f4c829338e5440f89">組合圖</a></p>
 <p>零件繪製影片:</p>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/eCSrwmfxI_k" title="YouTube video player" width="560"></iframe></p>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/HkuVICGeDFs" title="YouTube video player" width="560"></iframe></p>
@@ -468,6 +468,8 @@ end
  
 -- See the user manual or the available code snippets for additional callback functions and details</pre>
 <h3>MTB_robot add suction pad</h3>
+<p>影片:</p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/xOBn5r0un6U" title="YouTube video player" width="560"></iframe></p>
 <p>主程式:</p>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">function sysCall_init()
     -- do some initialization here
@@ -532,4 +534,63 @@ end
  
 -- See the user manual or the available code snippets for additional callback functions and details
 </pre>
-<p></p>
+<h3>逆向運動學函式</h3>
+<p>影片:</p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/3F1TOlC-U3E" title="YouTube video player" width="560"></iframe></p>
+<p>主程式:</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">function sysCall_init() 
+    axis1=sim.getObjectHandle('MTB_axis1')
+    axis2=sim.getObjectHandle('MTB_axis2')
+    axis3=sim.getObjectHandle('MTB_axis3')
+    axis4=sim.getObjectHandle('MTB_axis4')
+    mtb3=sim.getObjectHandle('link3')
+    suctionPad=sim.getObjectHandle('suctionPad')
+    BaseFrame=sim.getObjectHandle("BaseFrame")
+    block =sim.getObjectHandle("Cuboid")
+    rotation1 = 0
+    rotation2 = 0
+    distance3 = 0
+    modelBase=sim.getObjectHandle(sim.handle_self)
+    robotBase=modelBase
+    robotName='suctionPad'
+    deg = math.pi/180
+     
+end
+function sysCall_actuation() 
+    calibration = 0.0042
+    message, auxiliaryData=sim.getSimulatorMessage()
+        while message ~= -1 do
+            key=auxiliaryData[1]
+            sim.addStatusbarMessage('????? key:'..key)
+            if (message==sim.message_keypress) then
+            if (auxiliaryData[1]==112) then --p activate the suction pad
+                sim.setScriptSimulationParameter(sim.getScriptAssociatedWithObject(suctionPad),"active",'true')
+                end -- if p
+                if (auxiliaryData[1]==113) then --q deactivate the suction pad
+                sim.setScriptSimulationParameter(sim.getScriptAssociatedWithObject(suctionPad),'active','false')
+                end -- if q
+                if (auxiliaryData[1]==49) then  
+                     rotation1 = 67.8
+                     rotation2 = 44.76
+                     sim.setJointPosition(axis1, rotation1)
+                     sim.setJointPosition(axis2, rotation2)
+                end -- if 1
+                if (auxiliaryData[1]==50) then  
+                     rotation1 = -279.64
+                     rotation2 = -49.9
+                     sim.setJointPosition(axis1, rotation2)
+                     sim.setJointPosition(axis2, rotation1)
+                end -- if 2
+                if (auxiliaryData[1]==100) then  
+                     distance3 = distance3 + 0.03 + calibration
+                     sim.setJointPosition(axis4, distance3)
+                end -- if d
+                if (auxiliaryData[1]==117) then 
+                     distance3 = distance3 - 0.03 - calibration
+                     sim.setJointPosition(axis4, distance3)
+                end -- if u
+           end  -- if
+    message, auxiliaryData=sim.getSimulatorMessage()
+        end -- while
+end -- function</pre>
+<p><img alt="" height="375" src="/images/41123.jpg" width="500"/></p>
