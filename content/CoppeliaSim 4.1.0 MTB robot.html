@@ -145,7 +145,7 @@ img.add_border {
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">function sysCall_init()
     -- do some initialization here
      axis1=sim.getObjectHandle('MTB_axis1')
-     axis1=sim.getObjectHandle('MTB_axis1')
+     axis1=sim.getObjectHandle('MTB_axis2')
      axis3=sim.getObjectHandle('MTB_axis3')
      axis4=sim.getObjectHandle('MTB_axis4')     
      rotation1 = 0
@@ -154,12 +154,7 @@ img.add_border {
      deg = math.pi/180
      --sim.sJointTargetVelocity(joint,5.5)
       
-      
-     
-      
- 
 end
- 
 function sysCall_actuation()
  calibration = 0.0042
  message,auxiliaryData=sim.getSimulatorMessage()
@@ -169,24 +164,25 @@ function sysCall_actuation()
       end
       if (auxiliaryData[1]==97) then--a
       rotation1 = rotation1 + 5*deg
+      --逆時針轉每按一次增加5度
       sim.setJointPosition(axis1, rotation1)
       end
       if (auxiliaryData[1]==100) then --d
       rotation1 = rotation1 - 5*deg
+     --順時針轉每按一次減少5度
       sim.setJointPosition(axis1, rotation1)
       end
       if (auxiliaryData[1]==119) then --s
       distance3 = distance3 + 0.01 + calibration
+      --每按一次s軸就向下多0.01
       sim.setJointPosition(axis3, distance3)
       end
       if (auxiliaryData[1]==115) then --w
       distance3 = distance3 - 0.01 - calibration
+      --每按一次w軸就向上多0.01
       sim.setJointPosition(axis3, distance3)
       end
-      
- end   
- 
- 
+  end    
 end
 function sysCall_sensing()
     -- put your sensing code here
@@ -196,8 +192,9 @@ function sysCall_cleanup()
     -- do some clean-up here
 end
  
--- See the user manual or the available code snippets for additional callback functions and details</pre>
-<br />Onshape 零組件繪製 << <a href='Onshape 零組件繪製.html'>Previous</a> <a href='MTB_robot add suction pad.html'>Next</a> >> MTB_robot add suction pad</div>
+-- See the user manual or the available code snippets for additional callback functions and details
+</pre>
+<p></p><br />Onshape 零組件繪製 << <a href='Onshape 零組件繪製.html'>Previous</a> <a href='MTB_robot add suction pad.html'>Next</a> >> MTB_robot add suction pad</div>
         
     <!-- footer -->
       <div class="container">

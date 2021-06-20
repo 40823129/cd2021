@@ -414,9 +414,67 @@ for i in range(len(data)):
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">function sysCall_init()
     -- do some initialization here
      axis1=sim.getObjectHandle('MTB_axis1')
-     axis1=sim.getObjectHandle('MTB_axis1')
+     axis1=sim.getObjectHandle('MTB_axis2')
      axis3=sim.getObjectHandle('MTB_axis3')
      axis4=sim.getObjectHandle('MTB_axis4')     
+     rotation1 = 0
+     distance3 = 0
+      
+     deg = math.pi/180
+     --sim.sJointTargetVelocity(joint,5.5)
+      
+end
+function sysCall_actuation()
+ calibration = 0.0042
+ message,auxiliaryData=sim.getSimulatorMessage()
+ if (message==sim.message_keypress) then
+      print(auxiliaryData[1])--key
+      if (auxiliaryData[1]==string.byte(' ')) then
+      end
+      if (auxiliaryData[1]==97) then--a
+      rotation1 = rotation1 + 5*deg
+      --逆時針轉每按一次增加5度
+      sim.setJointPosition(axis1, rotation1)
+      end
+      if (auxiliaryData[1]==100) then --d
+      rotation1 = rotation1 - 5*deg
+     --順時針轉每按一次減少5度
+      sim.setJointPosition(axis1, rotation1)
+      end
+      if (auxiliaryData[1]==119) then --s
+      distance3 = distance3 + 0.01 + calibration
+      --每按一次s軸就向下多0.01
+      sim.setJointPosition(axis3, distance3)
+      end
+      if (auxiliaryData[1]==115) then --w
+      distance3 = distance3 - 0.01 - calibration
+      --每按一次w軸就向上多0.01
+      sim.setJointPosition(axis3, distance3)
+      end
+  end    
+end
+function sysCall_sensing()
+    -- put your sensing code here
+end
+ 
+function sysCall_cleanup()
+    -- do some clean-up here
+end
+ 
+-- See the user manual or the available code snippets for additional callback functions and details
+</pre>
+<p></p><h3>MTB_robot add suction pad</h3>
+<p><a href="https://drive.google.com/drive/folders/1StLRNKuFHloJbb8w5biQOJpLj-K0FSCj?usp=sharing">W16_exam</a></p>
+<p>影片:</p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/xOBn5r0un6U" title="YouTube video player" width="560"></iframe></p>
+<p>主程式:</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">function sysCall_init()
+    -- do some initialization here
+     axis1=sim.getObjectHandle('MTB_axis1')
+     axis1=sim.getObjectHandle('MTB_axis2')
+     axis3=sim.getObjectHandle('MTB_axis3')
+     axis4=sim.getObjectHandle('MTB_axis4')
+     suctionPad=sim.getObjectHandle('suctionPad')       
      rotation1 = 0
      distance3 = 0
       
@@ -452,6 +510,14 @@ function sysCall_actuation()
       distance3 = distance3 - 0.01 - calibration
       sim.setJointPosition(axis3, distance3)
       end
+       if (auxiliaryData[1]==112) then --p activate the suction pad
+sim.setScriptSimulationParameter(sim.getScriptAssociatedWithObject(suctionPad),'active','true')
+      end -- if p
+        --按p可以吸取物體
+      if (auxiliaryData[1]==113) then --q deactivate the suction pad
+sim.setScriptSimulationParameter(sim.getScriptAssociatedWithObject(suctionPad),'active','false')
+      end -- if q
+        --按q可以放開物體
       
  end   
  
@@ -466,75 +532,7 @@ function sysCall_cleanup()
 end
  
 -- See the user manual or the available code snippets for additional callback functions and details</pre>
-<h3>MTB_robot add suction pad</h3>
-<p><a href="https://drive.google.com/drive/folders/1StLRNKuFHloJbb8w5biQOJpLj-K0FSCj?usp=sharing">W16_exam</a></p>
-<p>影片:</p>
-<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/xOBn5r0un6U" title="YouTube video player" width="560"></iframe></p>
-<p>主程式:</p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">function sysCall_init()
-    -- do some initialization here
-     axis1=sim.getObjectHandle('MTB_axis1')
-     axis1=sim.getObjectHandle('MTB_axis1')
-     axis3=sim.getObjectHandle('MTB_axis3')
-     axis4=sim.getObjectHandle('MTB_axis4')
-     suctionPad=sim.getObjectHandle('suctionPad')     
-     rotation1 = 0
-     distance3 = 0
-      
-     deg = math.pi/180
-     --sim.sJointTargetVelocity(joint,5.5)
-      
-      
-     
-      
- 
-end
- 
-function sysCall_actuation()
- calibration = 0.0042
- message,auxiliaryData=sim.getSimulatorMessage()
- if (message==sim.message_keypress) then
-      print(auxiliaryData[1])--key
-      if (auxiliaryData[1]==string.byte(' ')) then
-      end
-      if (auxiliaryData[1]==97) then--a
-      rotation1 = rotation1 + 5*deg
-      sim.setJointPosition(axis1, rotation1)
-      end
-      if (auxiliaryData[1]==100) then --d
-      rotation1 = rotation1 - 5*deg
-      sim.setJointPosition(axis1, rotation1)
-      end
-      if (auxiliaryData[1]==119) then --s
-      distance3 = distance3 + 0.01 + calibration
-      sim.setJointPosition(axis3, distance3)
-      end
-      if (auxiliaryData[1]==115) then --w
-      distance3 = distance3 - 0.01 - calibration
-      sim.setJointPosition(axis3, distance3)
-      end
-      if (auxiliaryData[1]==112) then --p activate the suction pad
-sim.setScriptSimulationParameter(sim.getScriptAssociatedWithObject(suctionPad),'active','true')
-      end -- if p
-      if (auxiliaryData[1]==113) then --q deactivate the suction pad
-sim.setScriptSimulationParameter(sim.getScriptAssociatedWithObject(suctionPad),'active','false')
-      end -- if q
-      
- end   
- 
- 
-end
-function sysCall_sensing()
-    -- put your sensing code here
-end
- 
-function sysCall_cleanup()
-    -- do some clean-up here
-end
- 
--- See the user manual or the available code snippets for additional callback functions and details
-</pre>
-<h3>逆向運動學函式</h3>
+<p></p><h3>逆向運動學函式</h3>
 <p><a href="https://drive.google.com/drive/folders/1StLRNKuFHloJbb8w5biQOJpLj-K0FSCj?usp=sharing">W16_exam</a></p>
 <p>影片:</p>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/3F1TOlC-U3E" title="YouTube video player" width="560"></iframe></p>
@@ -585,17 +583,27 @@ function sysCall_actuation()
                 if (auxiliaryData[1]==100) then  
                      distance3 = distance3 + 0.03 + calibration
                      sim.setJointPosition(axis4, distance3)
+                     --轉軸旋轉 distance3 的數值 (逆轉)
                 end -- if d
                 if (auxiliaryData[1]==117) then 
                      distance3 = distance3 - 0.03 - calibration
                      sim.setJointPosition(axis4, distance3)
-                end -- if u
+                     --轉軸旋轉 distance3 的數值 (順轉)
+                end -- if u 
            end  -- if
     message, auxiliaryData=sim.getSimulatorMessage()
         end -- while
-end -- function</pre>
-<p><img alt="" height="375" src="/images/41123.jpg" width="500"/></p>
-<h3>Python remote API 逆向運動學函式</h3>
+end -- function
+function sysCall_sensing()
+    -- put your sensing code here
+end
+function sysCall_cleanup()
+    -- do some clean-up here
+end
+ 
+-- See the user manual or the available code snippets for additional callback functions and details
+</pre>
+<p><img alt="" height="375" src="/images/41123.jpg" width="500"/></p><h3>Python remote API 逆向運動學函式</h3>
 <p><a href="https://drive.google.com/drive/folders/1StLRNKuFHloJbb8w5biQOJpLj-K0FSCj?usp=sharing">W16_exam</a></p>
 <p>影片:</p>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/hmIS0Zf9wXc" title="YouTube video player" width="560"></iframe></p>
@@ -810,5 +818,4 @@ if clientID != -1:
           
 else:
     print ('Failed connecting to remote API server')
-    print ('End')</pre>
-<h2>W17~W18</h2>
+    print ('End')</pre><h1>W17~W18</h1>

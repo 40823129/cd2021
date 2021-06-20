@@ -184,17 +184,27 @@ function sysCall_actuation()
                 if (auxiliaryData[1]==100) then  
                      distance3 = distance3 + 0.03 + calibration
                      sim.setJointPosition(axis4, distance3)
+                     --轉軸旋轉 distance3 的數值 (逆轉)
                 end -- if d
                 if (auxiliaryData[1]==117) then 
                      distance3 = distance3 - 0.03 - calibration
                      sim.setJointPosition(axis4, distance3)
-                end -- if u
+                     --轉軸旋轉 distance3 的數值 (順轉)
+                end -- if u 
            end  -- if
     message, auxiliaryData=sim.getSimulatorMessage()
         end -- while
-end -- function</pre>
-<p><img alt="" height="375" src="./../images/41123.jpg" width="500"/></p>
-<br />MTB_robot add suction pad << <a href='MTB_robot add suction pad.html'>Previous</a> <a href='Python remote API 逆向運動學函式.html'>Next</a> >> Python remote API 逆向運動學函式</div>
+end -- function
+function sysCall_sensing()
+    -- put your sensing code here
+end
+function sysCall_cleanup()
+    -- do some clean-up here
+end
+ 
+-- See the user manual or the available code snippets for additional callback functions and details
+</pre>
+<p><img alt="" height="375" src="./../images/41123.jpg" width="500"/></p><br />MTB_robot add suction pad << <a href='MTB_robot add suction pad.html'>Previous</a> <a href='Python remote API 逆向運動學函式.html'>Next</a> >> Python remote API 逆向運動學函式</div>
         
     <!-- footer -->
       <div class="container">

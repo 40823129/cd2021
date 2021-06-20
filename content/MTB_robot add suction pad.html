@@ -141,10 +141,10 @@ img.add_border {
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">function sysCall_init()
     -- do some initialization here
      axis1=sim.getObjectHandle('MTB_axis1')
-     axis1=sim.getObjectHandle('MTB_axis1')
+     axis1=sim.getObjectHandle('MTB_axis2')
      axis3=sim.getObjectHandle('MTB_axis3')
      axis4=sim.getObjectHandle('MTB_axis4')
-     suctionPad=sim.getObjectHandle('suctionPad')     
+     suctionPad=sim.getObjectHandle('suctionPad')       
      rotation1 = 0
      distance3 = 0
       
@@ -180,12 +180,14 @@ function sysCall_actuation()
       distance3 = distance3 - 0.01 - calibration
       sim.setJointPosition(axis3, distance3)
       end
-      if (auxiliaryData[1]==112) then --p activate the suction pad
+       if (auxiliaryData[1]==112) then --p activate the suction pad
 sim.setScriptSimulationParameter(sim.getScriptAssociatedWithObject(suctionPad),'active','true')
       end -- if p
+        --按p可以吸取物體
       if (auxiliaryData[1]==113) then --q deactivate the suction pad
 sim.setScriptSimulationParameter(sim.getScriptAssociatedWithObject(suctionPad),'active','false')
       end -- if q
+        --按q可以放開物體
       
  end   
  
@@ -199,9 +201,8 @@ function sysCall_cleanup()
     -- do some clean-up here
 end
  
--- See the user manual or the available code snippets for additional callback functions and details
-</pre>
-<br />CoppeliaSim 4.1.0 MTB robot << <a href='CoppeliaSim 4.1.0 MTB robot.html'>Previous</a> <a href='逆向運動學函式.html'>Next</a> >> 逆向運動學函式</div>
+-- See the user manual or the available code snippets for additional callback functions and details</pre>
+<p></p><br />CoppeliaSim 4.1.0 MTB robot << <a href='CoppeliaSim 4.1.0 MTB robot.html'>Previous</a> <a href='逆向運動學函式.html'>Next</a> >> 逆向運動學函式</div>
         
     <!-- footer -->
       <div class="container">
